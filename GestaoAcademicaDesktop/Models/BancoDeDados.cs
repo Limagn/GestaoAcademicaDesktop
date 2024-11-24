@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GestaoAcademicaDesktop.Models
+{
+  internal class BancoDeDados
+  {
+    public static Dictionary<string, Aluno> DictAlunos = new();
+    public static Dictionary<string, Professor> DictProfessores = new();
+  }
+}
