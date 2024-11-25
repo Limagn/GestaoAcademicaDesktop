@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace GestaoAcademicaDesktop
 {
-  public partial class AdminForm : Form
+  public partial class AdminForms : Form
   {
     Administrador adm = new Administrador();
-    public AdminForm()
+    public AdminForms()
     {
       InitializeComponent();
     }
@@ -22,6 +22,33 @@ namespace GestaoAcademicaDesktop
     private void AdminForm_Load(object sender, EventArgs e)
     {
 
+    }
+
+    //---------
+    // Login |
+    //---------
+    private void btnLogin_Click(object sender, EventArgs e)
+    {
+      if (textUsuario.Text == adm.Usuario && textSenha.Text == adm.Senha)
+      {
+        textMatriculaAluno.Enabled = true;
+        textNomeAluno.Enabled = true;
+        textSobrenomeAluno.Enabled = true;
+        textCurso.Enabled = true;
+        textMatriculaProfessor.Enabled = true;
+        textNomeProfessor.Enabled = true;
+        textSobrenomeProfessor.Enabled = true;
+        textDisciplina.Enabled = true;
+        btnListarAlunos.Enabled = true;
+        btnListarProfessores.Enabled = true;
+        textSenha.Clear();
+        textUsuario.Enabled = false;
+        textSenha.Enabled = false;
+      }
+      else
+      {
+        MessageBox.Show("Usuário inválido!");
+      }
     }
 
     //---------
@@ -111,9 +138,9 @@ namespace GestaoAcademicaDesktop
         btnRemoverProfessor.Enabled = false;
       }
     }
-    //--------------
-    // Utilitários |
-    //--------------
+    //--------------------
+    // Utilitários Aluno |
+    //--------------------
     private void btnVoltar_Click(object sender, EventArgs e)
     {
       this.Close();
@@ -160,6 +187,10 @@ namespace GestaoAcademicaDesktop
 
     }
 
+    //------------------------
+    // Utilitários Professor |
+    //------------------------
+
     private void VerificarCaixasPreenchidasProfessor()
     {
       if (
@@ -197,5 +228,27 @@ namespace GestaoAcademicaDesktop
     {
       VerificarCaixasPreenchidasProfessor();
     }
+
+    //--------------------
+    // Utilitários Login |
+    //--------------------
+
+    private void VerificarCaixasPreenchidasLogin()
+    {
+      if (textUsuario.Text != "" && textSenha.Text != "")
+        btnLogin.Enabled = true;
+      else
+        btnLogin.Enabled = false;
+    }
+    private void txtUsuario_TextChanged(object sender, EventArgs e)
+    {
+      VerificarCaixasPreenchidasLogin();
+    }
+
+    private void txtSenha_TextChanged(object sender, EventArgs e)
+    {
+      VerificarCaixasPreenchidasLogin();
+    }
+
   }
 }

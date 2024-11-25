@@ -18,22 +18,22 @@ namespace GestaoAcademicaDesktop.Models
     {
       if (Idade != 0)
       {
-        MessageBox.Show($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou professor na UniFOA e dou aula de {Disciplina} ");
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou professor na UniFOA e dou aula de {Disciplina}.");
       }
       else
       {
-        MessageBox.Show($"Olá! Meu nome é {NomeCompleto}. Sou aluno na UniFOA e dou aula de {Disciplina} ");
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto}. Sou professor na UniFOA e dou aula de {Disciplina}.");
       }
     }
-    public void Avaliar(string matricAluno, int nota)
+    public void Avaliar(string matricAluno, decimal nota)
     {
       if (BancoDeDados.DictAlunos.TryGetValue(matricAluno, out Aluno aluno))
       {
-        MessageBox.Show($"O aluno {NomeCompleto} avaliou o professor {aluno.NomeCompleto} com a nota {nota}.");
+        MessageBox.Show($"O professor {NomeCompleto} avaliou o aluno {aluno.NomeCompleto} com a nota {nota}.");
       }
       else
       {
-        MessageBox.Show("Professor não encontrado.");
+        MessageBox.Show("Aluno não encontrado.");
       }
     }
     public override string ToString()

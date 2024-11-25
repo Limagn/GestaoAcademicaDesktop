@@ -18,16 +18,16 @@ namespace GestaoAcademicaDesktop.Models
     {
       if (Idade != 0)
       {
-        MessageBox.Show($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou aluno na UniFOA e estudo {Curso}");
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou aluno na UniFOA e estudo {Curso}.");
       }
       else
       {
-        MessageBox.Show($"Olá! Meu nome é {NomeCompleto}. Sou aluno na UniFOA e estudo {Curso}");
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto}. Sou aluno na UniFOA e estudo {Curso}.");
       }
     }
-    public void Avaliar(string matricProfessor, int nota)
+    public void Avaliar(string matriculaProfessor, decimal nota)
     {
-      if (BancoDeDados.DictProfessores.TryGetValue(matricProfessor, out Professor professor))
+      if (BancoDeDados.DictProfessores.TryGetValue(matriculaProfessor, out Professor professor))
       {
         MessageBox.Show($"O aluno {NomeCompleto} avaliou o professor {professor.NomeCompleto} com a nota {nota}.");
       }

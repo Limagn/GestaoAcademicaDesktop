@@ -84,7 +84,6 @@ namespace GestaoAcademicaDesktop
       lblTitulo.Size = new Size(220, 15);
       lblTitulo.TabIndex = 4;
       lblTitulo.Text = "Bem-vindo(a)!! Selecione sua permissão.";
-      lblTitulo.Click += label1_Click;
       // 
       // Form1
       // 

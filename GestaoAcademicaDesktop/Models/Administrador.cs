@@ -9,7 +9,7 @@ namespace GestaoAcademicaDesktop.Models
 {
    public class Administrador
   {
-    public string Login => "admin";
+    public string Usuario => "admin";
     public string Senha => "admin";
   }
 }
