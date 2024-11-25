@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestaoAcademicaDesktop.Models
 {
-  internal class BancoDeDados
+  public static class BancoDeDados
   {
     public static Dictionary<string, Aluno> DictAlunos = new();
     public static Dictionary<string, Professor> DictProfessores = new();

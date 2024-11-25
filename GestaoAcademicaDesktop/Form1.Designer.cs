@@ -1,6 +1,7 @@
-﻿namespace GestaoAcademicaDesktop
+﻿
+namespace GestaoAcademicaDesktop
 {
-  partial class MainForm
+  partial class Form1
   {
     /// <summary>
     ///  Required designer variable.
@@ -32,7 +33,7 @@
       btnAluno = new Button();
       btnProfessor = new Button();
       btnSair = new Button();
-      label1 = new Label();
+      lblTitulo = new Label();
       SuspendLayout();
       // 
       // btnAdmin
@@ -43,6 +44,7 @@
       btnAdmin.TabIndex = 0;
       btnAdmin.Text = "Admin";
       btnAdmin.UseVisualStyleBackColor = true;
+      btnAdmin.Click += btnAdmin_Click;
       // 
       // btnAluno
       // 
@@ -52,6 +54,7 @@
       btnAluno.TabIndex = 1;
       btnAluno.Text = "Aluno";
       btnAluno.UseVisualStyleBackColor = true;
+      btnAluno.Click += btnAluno_Click;
       // 
       // btnProfessor
       // 
@@ -61,6 +64,7 @@
       btnProfessor.TabIndex = 2;
       btnProfessor.Text = "Professor";
       btnProfessor.UseVisualStyleBackColor = true;
+      btnProfessor.Click += btnProfessor_Click;
       // 
       // btnSair
       // 
@@ -70,28 +74,29 @@
       btnSair.TabIndex = 3;
       btnSair.Text = "Sair";
       btnSair.UseVisualStyleBackColor = true;
+      btnSair.Click += btnSair_Click;
       // 
-      // label1
+      // lblTitulo
       // 
-      label1.AutoSize = true;
-      label1.Location = new Point(29, 32);
-      label1.Name = "label1";
-      label1.Size = new Size(220, 15);
-      label1.TabIndex = 4;
-      label1.Text = "Bem-vindo(a)!! Selecione sua permissão.";
-      label1.Click += label1_Click;
+      lblTitulo.AutoSize = true;
+      lblTitulo.Location = new Point(29, 32);
+      lblTitulo.Name = "lblTitulo";
+      lblTitulo.Size = new Size(220, 15);
+      lblTitulo.TabIndex = 4;
+      lblTitulo.Text = "Bem-vindo(a)!! Selecione sua permissão.";
+      lblTitulo.Click += label1_Click;
       // 
-      // MainForm
+      // Form1
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(275, 321);
-      Controls.Add(label1);
+      Controls.Add(lblTitulo);
       Controls.Add(btnSair);
       Controls.Add(btnProfessor);
       Controls.Add(btnAluno);
       Controls.Add(btnAdmin);
-      Name = "MainForm";
+      Name = "Form1";
       Text = "Gestão Acadêmica";
       Load += Form1_Load;
       ResumeLayout(false);
@@ -104,6 +109,6 @@
     private Button btnAluno;
     private Button btnProfessor;
     private Button btnSair;
-    private Label label1;
+    private Label lblTitulo;
   }
 }

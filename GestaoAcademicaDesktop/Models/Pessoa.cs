@@ -30,10 +30,6 @@ namespace GestaoAcademicaDesktop.Models
 
       set
       {
-        if (value == "")
-        {
-          throw new ArgumentException("O nome não pode ser vazio.");
-        }
         _nome = value;
       }
     }
@@ -44,10 +40,6 @@ namespace GestaoAcademicaDesktop.Models
 
       set
       {
-        if (value == "")
-        {
-          throw new ArgumentException("O sobrenome não pode ser vazio.");
-        }
         _sobrenome = value;
       }
     }
@@ -58,14 +50,9 @@ namespace GestaoAcademicaDesktop.Models
 
       set
       {
-        if (value == null)
-        {
-          throw new ArgumentException("A matricula não pode ser vazia.");
-        }
         _matricula = value;
       }
     }
-
     public string NomeCompleto => $"{Nome} {Sobrenome}";
     public int Idade { get; set; }
 

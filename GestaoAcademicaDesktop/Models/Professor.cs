@@ -12,31 +12,33 @@ namespace GestaoAcademicaDesktop.Models
     {
       Disciplina = disciplina;
     }
-    public string Disciplina { get; set; }
+    protected string Disciplina { get; set; }
 
     public override void Apresentacao()
     {
       if (Idade != 0)
       {
-        Console.WriteLine($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou professor na UniFOA e dou aula de {Disciplina} ");
-        Console.WriteLine();
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto} e tenho {Idade} anos. Sou professor na UniFOA e dou aula de {Disciplina} ");
       }
       else
       {
-        Console.WriteLine($"Olá! Meu nome é {NomeCompleto}. Sou professor na UniFOA e dou aula de {Disciplina} ");
-        Console.WriteLine();
+        MessageBox.Show($"Olá! Meu nome é {NomeCompleto}. Sou aluno na UniFOA e dou aula de {Disciplina} ");
       }
     }
     public void Avaliar(string matricAluno, int nota)
     {
-      BancoDeDados.DictAlunos.TryGetValue(matricAluno, out Aluno aluno);
-      Console.Clear();
-      Console.WriteLine($"O professor {NomeCompleto} avaliou o aluno {aluno.NomeCompleto} com a nota {nota}.");
-      Console.WriteLine();
+      if (BancoDeDados.DictAlunos.TryGetValue(matricAluno, out Aluno aluno))
+      {
+        MessageBox.Show($"O aluno {NomeCompleto} avaliou o professor {aluno.NomeCompleto} com a nota {nota}.");
+      }
+      else
+      {
+        MessageBox.Show("Professor não encontrado.");
+      }
     }
     public override string ToString()
     {
-      return $"Nome: {Nome} {Sobrenome}, Matrícula: {Matricula}, Disciplina: {Disciplina}";
+      return $"{Matricula} - {NomeCompleto} - {Disciplina}";
     }
   }
 }
