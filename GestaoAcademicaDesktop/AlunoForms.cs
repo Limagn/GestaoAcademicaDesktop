@@ -34,7 +34,7 @@ namespace GestaoAcademicaDesktop
       }
       else
       {
-        MessageBox.Show("Matrícula inválida.");
+        MessageBox.Show("Matrícula inválida.","Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
     private void btnApresentacao_Click(object sender, EventArgs e)
@@ -71,7 +71,6 @@ namespace GestaoAcademicaDesktop
       else
         btnEnviar.Enabled = false;
     }
-
     private void textMatriculaProfessor_TextChanged(object sender, EventArgs e)
     {
       VerificarCaixasPreenchidasAvaliarProfessor();

@@ -4,8 +4,6 @@ namespace GestaoAcademicaDesktop
 {
   public partial class Form1 : Form
   {
-    //private Administrador adm = new();
-    //private Usuario user = new();
     public Form1()
     {
       InitializeComponent();

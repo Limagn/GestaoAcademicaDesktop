@@ -27,31 +27,19 @@ namespace GestaoAcademicaDesktop.Models
     public string Nome
     {
       get => _nome;
-
-      set
-      {
-        _nome = value;
-      }
+      set => _nome = value;
     }
 
     public string Sobrenome
     {
       get => _sobrenome;
-
-      set
-      {
-        _sobrenome = value;
-      }
+      set => _sobrenome = value;
     }
 
     public string Matricula
     {
       get => _matricula;
-
-      set
-      {
-        _matricula = value;
-      }
+      set => _matricula = value;
     }
     public string NomeCompleto => $"{Nome} {Sobrenome}";
     public int Idade { get; set; }

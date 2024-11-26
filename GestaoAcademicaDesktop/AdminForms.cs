@@ -23,6 +23,10 @@ namespace GestaoAcademicaDesktop
     {
 
     }
+    private void btnVoltar_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
 
     //---------
     // Login |
@@ -47,7 +51,7 @@ namespace GestaoAcademicaDesktop
       }
       else
       {
-        MessageBox.Show("Usuário inválido!");
+        MessageBox.Show("Usuário inválido!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -58,9 +62,18 @@ namespace GestaoAcademicaDesktop
     {
       Aluno aluno = new Aluno(textNomeAluno.Text, textSobrenomeAluno.Text, textMatriculaAluno.Text, textCurso.Text);
 
-      BancoDeDados.DictAlunos.TryAdd(textMatriculaAluno.Text, aluno);
-      MessageBox.Show("Aluno adicionado com sucesso!");
-      LimparCaixasAluno();
+      bool sucesso = BancoDeDados.DictAlunos.TryAdd(textMatriculaAluno.Text, aluno);
+
+      if (sucesso)
+      {
+        MessageBox.Show("Aluno adicionado com sucesso!");
+        LimparCaixasAluno();
+      }
+      else
+      {
+        MessageBox.Show("Matrícula existente.");
+      }
+
     }
 
     private void btnListarAlunos_Click(object sender, EventArgs e)
@@ -102,9 +115,16 @@ namespace GestaoAcademicaDesktop
     {
       Professor professor = new Professor(textNomeProfessor.Text, textSobrenomeProfessor.Text, textMatriculaProfessor.Text, textDisciplina.Text);
 
-      BancoDeDados.DictProfessores.TryAdd(textMatriculaProfessor.Text, professor);
-      MessageBox.Show("Professor adicionado com sucesso!");
-      LimparCaixasProfessor();
+      bool sucesso = BancoDeDados.DictProfessores.TryAdd(textMatriculaProfessor.Text, professor);
+      if (sucesso)
+      {
+        MessageBox.Show("Professor adicionado com sucesso!");
+        LimparCaixasProfessor();
+      }
+      else
+      {
+        MessageBox.Show("Matrícula existente.");
+      }
     }
 
     private void btnListarProfessores_Click(object sender, EventArgs e)
@@ -141,10 +161,6 @@ namespace GestaoAcademicaDesktop
     //--------------------
     // Utilitários Aluno |
     //--------------------
-    private void btnVoltar_Click(object sender, EventArgs e)
-    {
-      this.Close();
-    }
 
     private void VerificarCaixasPreenchidasAluno()
     {

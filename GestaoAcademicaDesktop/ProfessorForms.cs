@@ -35,7 +35,7 @@ namespace GestaoAcademicaDesktop
       }
       else
       {
-        MessageBox.Show("Matrícula inválida.");
+        MessageBox.Show("Matrícula inválida.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

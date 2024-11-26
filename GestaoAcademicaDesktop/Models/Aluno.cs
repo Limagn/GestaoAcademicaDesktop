@@ -33,7 +33,7 @@ namespace GestaoAcademicaDesktop.Models
       }
       else
       {
-        MessageBox.Show("Professor não encontrado.");
+        MessageBox.Show("Professor não encontrado.","Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
     public override string ToString()
