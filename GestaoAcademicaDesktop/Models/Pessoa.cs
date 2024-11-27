@@ -42,7 +42,7 @@ namespace GestaoAcademicaDesktop.Models
       set => _matricula = value;
     }
     public string NomeCompleto => $"{Nome} {Sobrenome}";
-    public int Idade { get; set; }
+    protected int Idade { get; set; }
 
     public abstract void Apresentacao();
   }

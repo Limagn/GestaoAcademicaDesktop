@@ -12,7 +12,7 @@ namespace GestaoAcademicaDesktop.Models
     {
       Disciplina = disciplina;
     }
-    protected string Disciplina { get; set; }
+    private string Disciplina { get; set; }
 
     public override void Apresentacao()
     {

@@ -8,6 +8,6 @@ namespace GestaoAcademicaDesktop.Models
 {
   internal interface IAvaliacao
   {
-    void Avaliar(string nome, decimal nota);
+    void Avaliar(string matricula, decimal nota);
   }
 }

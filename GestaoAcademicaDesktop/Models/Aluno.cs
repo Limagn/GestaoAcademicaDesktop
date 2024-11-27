@@ -12,7 +12,7 @@ namespace GestaoAcademicaDesktop.Models
     {
       Curso = curso;
     }
-    protected string Curso { get; set; }
+    private string Curso { get; set; }
 
     public override void Apresentacao()
     {
